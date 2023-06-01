@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// CREATE A REACT COMPONENT CALLED APP THAT HAS ROUTES TO THE FOLLOWING COMPONENTS:
+// 1. Home
+// 2. LOGIN
+// 3. REGISTER
+// USE THE react-router-dom 6 LIBRARY TO CREATE THE ROUTES
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import Login from './Login';
+import Register from './Register';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
